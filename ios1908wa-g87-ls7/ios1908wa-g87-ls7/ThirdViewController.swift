@@ -13,17 +13,18 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var lastNameLabel3: UILabel!
     var nameLabelVc3 = ""
     var lastNameLabelVc3 = ""
-    weak var delegate: MainViewControllerDelegate?
-    
+    var fullname = ""
 
+    @IBAction func saveButton(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nameLabel3.text = nameLabelVc3
-        lastNameLabel3.text = lastNameLabelVc3        
+        lastNameLabel3.text = lastNameLabelVc3
     }
-  
-    @IBAction func saveButton(_ sender: Any) {
-        delegate?.update(name: nameLabelVc3, lastName: lastNameLabelVc3)
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        fullname = "\(nameLabelVc3) \(lastNameLabelVc3)"
     }
 }
+

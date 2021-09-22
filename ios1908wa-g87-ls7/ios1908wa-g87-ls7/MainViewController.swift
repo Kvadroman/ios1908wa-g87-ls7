@@ -23,11 +23,10 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func continueButton(_ sender: Any) {
-        
     }
 
     @IBAction func returnToFirst(unwindSegue: UIStoryboardSegue) {
-        if let fullName = unwindSegue.destination as? ThirdViewController {
+        if let fullName = unwindSegue.source as? ThirdViewController {
             nameLastNameLabel.isHidden = false
             nameLastNameLabel.text = fullName.fullname
         }

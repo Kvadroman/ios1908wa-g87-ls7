@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "SecondViewController" else { return }
         if let vc2 = segue.destination as? SecondViewController {
             vc2.nameFromFirstViewController = nameTextField.text!
         }

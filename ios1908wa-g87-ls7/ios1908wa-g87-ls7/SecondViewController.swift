@@ -13,9 +13,11 @@ class SecondViewController: UIViewController {
     var nameFromFirstViewController = ""
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "ThirdViewController" else {return}
         if let lastName = segue.destination as? ThirdViewController {
             lastName.lastNameLabelVc3 = lastNameTextField2.text!
         }
+        guard segue.identifier == "ThirdViewController" else {return}
         if let name = segue.destination as? ThirdViewController {
             name.nameLabelVc3 = nameFromFirstViewController
         }

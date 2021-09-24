@@ -8,8 +8,9 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
+    
     @IBOutlet weak var lastNameTextField2: UITextField!
+    @IBOutlet weak var continueButton: UIButton!
     var nameFromFirstViewController = ""
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -21,10 +22,6 @@ class SecondViewController: UIViewController {
         if let name = segue.destination as? ThirdViewController {
             name.nameLabelVc3 = nameFromFirstViewController
         }
-    }
-    
-    @IBAction func continueButton(_ sender: Any) {
-        
     }
 }
 
